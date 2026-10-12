@@ -131,7 +131,19 @@ export default function Map3D({ searchTerm }) {
     zoom: clamp(vs.zoom, MIN_ZOOM, MAX_ZOOM),
     longitude: clamp(vs.longitude, US_BOUNDS.minLng, US_BOUNDS.maxLng),
     latitude: clamp(vs.latitude, US_BOUNDS.minLat, US_BOUNDS.maxLat),
+    ...(height3D ? {} : { pitch: 0, bearing: 0 }),
   });
+
+  const toggleHeight3D = () => {
+    const next = !height3D;
+    setHeight3D(next);
+    setViewState((vs) => ({
+      ...vs,
+      pitch: next ? INITIAL_VIEW_STATE.pitch : 0,
+      bearing: next ? vs.bearing : 0,
+      transitionDuration: 500,
+    }));
+  };
 
   useEffect(() => {
     const el = containerRef.current;
@@ -645,7 +657,7 @@ export default function Map3D({ searchTerm }) {
       {ready && (
         <DeckGL
           initialViewState={INITIAL_VIEW_STATE}
-          controller={{ minZoom: MIN_ZOOM, maxZoom: MAX_ZOOM }}
+          controller={{ minZoom: MIN_ZOOM, maxZoom: MAX_ZOOM, dragRotate: height3D, touchRotate: height3D }}
           viewState={viewState}
           onViewStateChange={({ viewState: vs }) => setViewState(constrainViewState(vs))}
           layers={layers}
@@ -673,7 +685,7 @@ export default function Map3D({ searchTerm }) {
       </div>
       <div className="absolute bottom-4 left-44 z-10 flex rounded-full bg-slate-900/90 p-1 shadow-lg">
         <button
-          onClick={() => setHeight3D((v) => !v)}
+          onClick={toggleHeight3D}
           className={`rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-wide transition-colors ${
             height3D ? "bg-white text-slate-900" : "text-white/60 hover:text-white"
           }`}
