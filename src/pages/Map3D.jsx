@@ -161,7 +161,6 @@ export default function Map3D({ searchTerm }) {
       const rect = el.getBoundingClientRect();
       setSize({ width: rect.width, height: rect.height });
 
-      // first time the container has a size, zoom so the whole contiguous US is visible
       if (!hasFitInitialView.current && rect.width > 0 && rect.height > 0) {
         hasFitInitialView.current = true;
         const { longitude, latitude, zoom } = new WebMercatorViewport({
