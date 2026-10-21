@@ -197,3 +197,131 @@
     @apply bg-background text-foreground;
   }
 }
+
+.metric-legend {
+  position: absolute;
+  left: 1rem;
+  bottom: 3.75rem;
+  z-index: 10;
+  width: 240px;
+  padding: 12px 14px;
+  border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 12px;
+  color: #172033;
+  background: rgb(255 255 255 / 92%);
+  box-shadow: 0 4px 18px rgb(0 0 0 / 16%);
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
+}
+
+.legend-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.legend-title {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.legend-unit {
+  font-size: 11px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.legend-scope {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  font-size: 10px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.legend-subtitle {
+  margin-top: 2px;
+  margin-bottom: 8px;
+  font-size: 10px;
+  line-height: 1.3;
+  color: #64748b;
+}
+
+.legend-gradient {
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid rgb(15 23 42 / 12%);
+}
+
+.legend-range {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #1e293b;
+}
+
+.legend-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+  font-size: 10px;
+  color: #526071;
+}
+
+.legend-note {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgb(15 23 42 / 8%);
+  font-size: 11px;
+  line-height: 1.35;
+  color: #475569;
+}
+
+.legend-elevation-note {
+  margin-top: 2px;
+  font-size: 10px;
+  color: #64748b;
+}
+
+.legend-missing {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.missing-swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid rgb(15 23 42 / 18%);
+  background: rgb(210 210 210);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .metric-legend {
+    left: 0.5rem;
+    bottom: 3.5rem;
+    width: 196px;
+    padding: 10px 12px;
+  }
+
+  .legend-subtitle {
+    display: none;
+  }
+}
+
