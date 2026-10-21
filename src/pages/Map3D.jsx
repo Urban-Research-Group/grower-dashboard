@@ -2,6 +2,7 @@
 import { useMemo, useEffect, useState, useRef } from "react";
 import DeckGL from "@deck.gl/react";
 import { GeoJsonLayer } from "@deck.gl/layers";
+import { WebMercatorViewport } from "@deck.gl/core";
 import { Map } from "react-map-gl/maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
 
@@ -34,6 +35,12 @@ const INITIAL_VIEW_STATE = {
   pitch: 45,
   bearing: 0,
 };
+
+// contiguous US extent used to fit the initial view to the container
+const CONUS_FIT_BOUNDS = [
+  [-125, 24.5],
+  [-66.9, 49.4],
+];
 
 function normalizeFips(raw) {
   if (raw == null) return null;
@@ -126,6 +133,7 @@ export default function Map3D({ searchTerm }) {
 
   const containerRef = useRef(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
+  const hasFitInitialView = useRef(false);
   const constrainViewState = (vs) => ({
     ...vs,
     zoom: clamp(vs.zoom, MIN_ZOOM, MAX_ZOOM),
@@ -152,6 +160,20 @@ export default function Map3D({ searchTerm }) {
     const updateSize = () => {
       const rect = el.getBoundingClientRect();
       setSize({ width: rect.width, height: rect.height });
+
+      if (!hasFitInitialView.current && rect.width > 0 && rect.height > 0) {
+        hasFitInitialView.current = true;
+        const { longitude, latitude, zoom } = new WebMercatorViewport({
+          width: rect.width,
+          height: rect.height,
+        }).fitBounds(CONUS_FIT_BOUNDS, { padding: 20 });
+        setViewState((vs) => ({
+          ...vs,
+          longitude,
+          latitude,
+          zoom: clamp(zoom, MIN_ZOOM, MAX_ZOOM),
+        }));
+      }
     };
 
     updateSize();
