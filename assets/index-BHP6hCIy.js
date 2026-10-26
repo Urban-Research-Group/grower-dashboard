@@ -38491,6 +38491,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${e.do
     {
       label: "Georgia",
       value: "GA"
+    },
+    {
+      label: "Texas",
+      value: "TX"
     }
   ], x4 = [
     {
@@ -38550,6 +38554,23 @@ For more information, see https://radix-ui.com/primitives/docs/components/${e.do
       "/historical/GA/2026_01.csv",
       "/historical/GA/2026_02.csv",
       "/historical/GA/2026_03.csv"
+    ],
+    TX: [
+      "/historical/TX/2025_08.csv",
+      "/historical/TX/2025_09.csv",
+      "/historical/TX/2025_10.csv",
+      "/historical/TX/2025_11.csv",
+      "/historical/TX/2025_12.csv",
+      "/historical/TX/2026_01.csv",
+      "/historical/TX/2026_02.csv",
+      "/historical/TX/2026_03.csv",
+      "/historical/TX/2026_04.csv",
+      "/historical/TX/2026_05.csv",
+      "/historical/TX/2026_06.csv",
+      "/historical/TX/2026_07.csv",
+      "/historical/TX/2026_08.csv",
+      "/historical/TX/2026_09.csv",
+      "/historical/TX/2026_10.csv"
     ]
   };
   function w4(t) {
@@ -73103,7 +73124,7 @@ DECKGL_FILTER_COLOR(fragColor, geometry);
     y.useEffect(() => {
       const f = t.mapLib;
       let d = true, p;
-      return Promise.resolve(f || hA(() => import("./maplibre-gl-CP37_OKB.js").then((m) => m.m), [])).then((m) => {
+      return Promise.resolve(f || hA(() => import("./maplibre-gl-DsStAeI4.js").then((m) => m.m), [])).then((m) => {
         if (!d) return;
         if (!m) throw new Error("Invalid mapLib");
         const v = "Map" in m ? m : m.default;
@@ -73378,7 +73399,8 @@ DECKGL_FILTER_COLOR(fragColor, geometry);
     "LA",
     "MS",
     "NC",
-    "SC"
+    "SC",
+    "TX"
   ], p9 = [];
   for (const t of EPe) p9.push(`${BC}states/${t}/${t}_DATA.csv`);
   const Ld = 6, Om = 3.5, Pm = 10, Mm = {
