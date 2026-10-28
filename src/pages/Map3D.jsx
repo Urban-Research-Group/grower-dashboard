@@ -10,7 +10,7 @@ const BASE = import.meta.env.BASE_URL;
 
 const COUNTIES_GEOJSON_URL = `${BASE}counties.geojson`;
 const STATES_GEOJSON_URL = `${BASE}us-states.json`;
-const READY_STATES = ["AL", "FL", "GA", "IL", "LA", "MS", "NC", "SC", "TX"];
+const READY_STATES = ["AL", "CA", "FL", "GA", "IL", "LA", "MS", "NC", "SC", "TX"];
 
 const STATE_CSV_URLS = [];
 
