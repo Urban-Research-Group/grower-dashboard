@@ -5,7 +5,7 @@ import os
 import argparse
 from dotenv import load_dotenv
 
-STATES = ["AL", "FL", "GA", "IL", "LA", "MS", "NC", "SC", "TX"]
+STATES = ["AL", "CA", "FL", "GA", "IL", "LA", "MS", "NC", "SC", "TX"]
 BUCKET = "state-metrics"
 
 # Load AWS credentials from .env

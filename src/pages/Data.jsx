@@ -21,6 +21,7 @@ const BASE = import.meta.env.BASE_URL
 
 const STATE_OPTIONS = [
   { label: "Alabama", value: "AL" },
+  { label: "California", value: "CA" },
   { label: "Florida", value: "FL" },
   { label: "Georgia", value: "GA" },
   { label: "Texas", value: "TX" },
@@ -67,6 +68,23 @@ const HISTORICAL_FILES_BY_STATE = {
     "/historical/GA/2026_01.csv",
     "/historical/GA/2026_02.csv",
     "/historical/GA/2026_03.csv",
+  ],
+  CA: [
+    "/historical/CA/2025_08.csv",
+    "/historical/CA/2025_09.csv",
+    "/historical/CA/2025_10.csv",
+    "/historical/CA/2025_11.csv",
+    "/historical/CA/2025_12.csv",
+    "/historical/CA/2026_01.csv",
+    "/historical/CA/2026_02.csv",
+    "/historical/CA/2026_03.csv",
+    "/historical/CA/2026_04.csv",
+    "/historical/CA/2026_05.csv",
+    "/historical/CA/2026_06.csv",
+    "/historical/CA/2026_07.csv",
+    "/historical/CA/2026_08.csv",
+    "/historical/CA/2026_09.csv",
+    "/historical/CA/2026_10.csv",
   ],
   TX: [
     "/historical/TX/2025_08.csv",
