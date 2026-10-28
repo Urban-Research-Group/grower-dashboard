@@ -38485,6 +38485,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${e.do
       value: "AL"
     },
     {
+      label: "California",
+      value: "CA"
+    },
+    {
       label: "Florida",
       value: "FL"
     },
@@ -38554,6 +38558,23 @@ For more information, see https://radix-ui.com/primitives/docs/components/${e.do
       "/historical/GA/2026_01.csv",
       "/historical/GA/2026_02.csv",
       "/historical/GA/2026_03.csv"
+    ],
+    CA: [
+      "/historical/CA/2025_08.csv",
+      "/historical/CA/2025_09.csv",
+      "/historical/CA/2025_10.csv",
+      "/historical/CA/2025_11.csv",
+      "/historical/CA/2025_12.csv",
+      "/historical/CA/2026_01.csv",
+      "/historical/CA/2026_02.csv",
+      "/historical/CA/2026_03.csv",
+      "/historical/CA/2026_04.csv",
+      "/historical/CA/2026_05.csv",
+      "/historical/CA/2026_06.csv",
+      "/historical/CA/2026_07.csv",
+      "/historical/CA/2026_08.csv",
+      "/historical/CA/2026_09.csv",
+      "/historical/CA/2026_10.csv"
     ],
     TX: [
       "/historical/TX/2025_08.csv",
@@ -73124,7 +73145,7 @@ DECKGL_FILTER_COLOR(fragColor, geometry);
     y.useEffect(() => {
       const f = t.mapLib;
       let d = true, p;
-      return Promise.resolve(f || hA(() => import("./maplibre-gl-DsStAeI4.js").then((m) => m.m), [])).then((m) => {
+      return Promise.resolve(f || hA(() => import("./maplibre-gl-wdKwS6L0.js").then((m) => m.m), [])).then((m) => {
         if (!d) return;
         if (!m) throw new Error("Invalid mapLib");
         const v = "Map" in m ? m : m.default;
@@ -73393,6 +73414,7 @@ DECKGL_FILTER_COLOR(fragColor, geometry);
   y.memo(SPe);
   const BC = "/grower-dashboard/", TPe = `${BC}counties.geojson`, APe = `${BC}us-states.json`, EPe = [
     "AL",
+    "CA",
     "FL",
     "GA",
     "IL",
