@@ -5,6 +5,7 @@ import { GeoJsonLayer } from "@deck.gl/layers";
 import { WebMercatorViewport } from "@deck.gl/core";
 import { Map } from "react-map-gl/maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
+import Legend from "../components/Legend";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -689,6 +690,14 @@ export default function Map3D({ searchTerm }) {
           <Map mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json" />
         </DeckGL>
       )}
+
+      <Legend
+        metric={metric}
+        cap={METRIC_CAPS[metric]}
+        metricCaps={METRIC_CAPS}
+        hasElevation={height3D}
+        isCountyView={viewState.zoom >= ZOOM_THRESHOLD}
+      />
 
       <div className="absolute bottom-4 left-4 z-10 flex rounded-full bg-slate-900/90 p-1 shadow-lg">
         {["saidi", "saifi"].map((m) => (
