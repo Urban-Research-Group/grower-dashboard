@@ -20,13 +20,23 @@ for (const state of READY_STATES) {
 }
 
 const ZOOM_THRESHOLD = 6;
-const MIN_ZOOM = 3.5;
-const MAX_ZOOM = 10;
+// Keep overview of CONUS, but allow deeper county zoom.
+// MIN was 3.5 and MAX 10 — that made zoom-in feel capped / sticky after the
+// "fit entire US" change. Slightly lower min helps fitBounds on wide screens;
+// higher max lets you inspect counties without hitting the wall early.
+const MIN_ZOOM = 3.0;
+const MAX_ZOOM = 13;
 const US_BOUNDS = {
   minLng: -127,
   maxLng: -65,
   minLat: 24,
   maxLat: 50,
+};
+
+// deck.gl default scrollZoom speed is ~0.01; raise for snappier wheel/trackpad zoom.
+const SCROLL_ZOOM = {
+  speed: 0.025,
+  smooth: false,
 };
 
 const INITIAL_VIEW_STATE = {
@@ -135,13 +145,29 @@ export default function Map3D({ searchTerm }) {
   const containerRef = useRef(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
   const hasFitInitialView = useRef(false);
-  const constrainViewState = (vs) => ({
-    ...vs,
-    zoom: clamp(vs.zoom, MIN_ZOOM, MAX_ZOOM),
-    longitude: clamp(vs.longitude, US_BOUNDS.minLng, US_BOUNDS.maxLng),
-    latitude: clamp(vs.latitude, US_BOUNDS.minLat, US_BOUNDS.maxLat),
-    ...(height3D ? {} : { pitch: 0, bearing: 0 }),
-  });
+  // Soft pan bounds: when zoomed out, keep the camera over the US; when zoomed
+  // in, add slack so zoom-toward-cursor near coasts isn't fought by hard clamps.
+  const constrainViewState = (vs) => {
+    const zoom = clamp(vs.zoom, MIN_ZOOM, MAX_ZOOM);
+    const t = clamp((zoom - MIN_ZOOM) / (MAX_ZOOM - MIN_ZOOM), 0, 1);
+    const lngPad = 10 * t;
+    const latPad = 6 * t;
+    return {
+      ...vs,
+      zoom,
+      longitude: clamp(
+        vs.longitude,
+        US_BOUNDS.minLng - lngPad,
+        US_BOUNDS.maxLng + lngPad,
+      ),
+      latitude: clamp(
+        vs.latitude,
+        US_BOUNDS.minLat - latPad,
+        US_BOUNDS.maxLat + latPad,
+      ),
+      ...(height3D ? {} : { pitch: 0, bearing: 0 }),
+    };
+  };
 
   const toggleHeight3D = () => {
     const next = !height3D;
@@ -680,7 +706,16 @@ export default function Map3D({ searchTerm }) {
       {ready && (
         <DeckGL
           initialViewState={INITIAL_VIEW_STATE}
-          controller={{ minZoom: MIN_ZOOM, maxZoom: MAX_ZOOM, dragRotate: height3D, touchRotate: height3D }}
+          controller={{
+            minZoom: MIN_ZOOM,
+            maxZoom: MAX_ZOOM,
+            scrollZoom: SCROLL_ZOOM,
+            doubleClickZoom: true,
+            dragPan: true,
+            dragRotate: height3D,
+            touchRotate: height3D,
+            inertia: 250,
+          }}
           viewState={viewState}
           onViewStateChange={({ viewState: vs }) => setViewState(constrainViewState(vs))}
           layers={layers}
