@@ -58,6 +58,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/states/
+          git add public/states/ public/historical/
           git diff --staged --quiet || git commit -m "chore: update daily dashboard files"
           git push origin HEAD:${{ matrix.branch }}

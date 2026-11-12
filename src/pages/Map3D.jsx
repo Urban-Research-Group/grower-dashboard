@@ -5,19 +5,18 @@ import { GeoJsonLayer } from "@deck.gl/layers";
 import { WebMercatorViewport } from "@deck.gl/core";
 import { Map } from "react-map-gl/maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
+import dataManifest from "virtual:data-manifest";
+import { loadCountiesGeojson } from "@/lib/geo";
 import Legend from "../components/Legend";
 
 const BASE = import.meta.env.BASE_URL;
 
-const COUNTIES_GEOJSON_URL = `${BASE}counties.geojson`;
 const STATES_GEOJSON_URL = `${BASE}us-states.json`;
-const READY_STATES = ["AL", "CA", "FL", "GA", "IL", "LA", "MS", "NC", "SC", "TX"];
 
-const STATE_CSV_URLS = [];
-
-for (const state of READY_STATES) {
-  STATE_CSV_URLS.push(`${BASE}states/${state}/${state}_DATA.csv`);
-}
+// Every state that has public/states/XX/XX_DATA.csv (generated at build time)
+const STATE_CSV_URLS = dataManifest.states.map(
+  (state) => `${BASE}states/${state}/${state}_DATA.csv`,
+);
 
 const ZOOM_THRESHOLD = 6;
 const MIN_ZOOM = 3.5;
@@ -184,8 +183,7 @@ export default function Map3D({ searchTerm }) {
   }, []);
 
   useEffect(() => {
-    fetch(COUNTIES_GEOJSON_URL)
-      .then((r) => r.json())
+    loadCountiesGeojson()
       .then(setCountiesGeojson)
       .catch((err) => console.error("Failed to load counties GeoJSON", err));
   }, []);
@@ -237,20 +235,18 @@ export default function Map3D({ searchTerm }) {
       return byFips;
     };
 
-    // Load all CSVs and merge
+    // Load all CSVs in parallel and merge
     const loadAllCSVs = async () => {
-      const allMetrics = {};
+      const results = await Promise.all(
+        STATE_CSV_URLS.map((url) =>
+          loadCSV(url).catch((err) => {
+            console.error(`Failed to load ${url}`, err);
+            return {};
+          }),
+        ),
+      );
 
-      for (const url of STATE_CSV_URLS) {
-        try {
-          const metrics = await loadCSV(url);
-          Object.assign(allMetrics, metrics);
-        } catch (err) {
-          console.error(`Failed to load ${url}`, err);
-        }
-      }
-
-      setMetrics(allMetrics);
+      setMetrics(Object.assign({}, ...results));
     };
 
     loadAllCSVs();

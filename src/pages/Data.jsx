@@ -17,15 +17,30 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
+import dataManifest from "virtual:data-manifest"
+
 const BASE = import.meta.env.BASE_URL
 
-const STATE_OPTIONS = [
-  { label: "Alabama", value: "AL" },
-  { label: "California", value: "CA" },
-  { label: "Florida", value: "FL" },
-  { label: "Georgia", value: "GA" },
-  { label: "Texas", value: "TX" },
-]
+const STATE_NAMES = {
+  AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California",
+  CO: "Colorado", CT: "Connecticut", DE: "Delaware", FL: "Florida", GA: "Georgia",
+  HI: "Hawaii", ID: "Idaho", IL: "Illinois", IN: "Indiana", IA: "Iowa",
+  KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland",
+  MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi",
+  MO: "Missouri", MT: "Montana", NE: "Nebraska", NV: "Nevada", NH: "New Hampshire",
+  NJ: "New Jersey", NM: "New Mexico", NY: "New York", NC: "North Carolina",
+  ND: "North Dakota", OH: "Ohio", OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania",
+  RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee",
+  TX: "Texas", UT: "Utah", VT: "Vermont", VA: "Virginia", WA: "Washington",
+  WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming",
+}
+
+// { AL: ["2025_08", ...], ... } generated from public/historical at build time
+const HISTORICAL_MONTHS_BY_STATE = dataManifest.historical
+
+const STATE_OPTIONS = Object.keys(HISTORICAL_MONTHS_BY_STATE)
+  .map((code) => ({ label: STATE_NAMES[code] || code, value: code }))
+  .sort((a, b) => a.label.localeCompare(b.label))
 
 const TIMEFRAME_OPTIONS = [
   { label: "1 week", value: "7" },
@@ -37,73 +52,6 @@ const TIMEFRAME_OPTIONS = [
 ]
 
 const METRIC_OPTIONS = ["SAIDI", "SAIFI"]
-
-const HISTORICAL_FILES_BY_STATE = {
-  AL: [
-    "/historical/AL/2025_08.csv",
-    "/historical/AL/2025_09.csv",
-    "/historical/AL/2025_10.csv",
-    "/historical/AL/2025_11.csv",
-    "/historical/AL/2025_12.csv",
-    "/historical/AL/2026_01.csv",
-    "/historical/AL/2026_02.csv",
-    "/historical/AL/2026_03.csv",
-  ],
-  FL: [
-    "/historical/FL/2025_08.csv",
-    "/historical/FL/2025_09.csv",
-    "/historical/FL/2025_10.csv",
-    "/historical/FL/2025_11.csv",
-    "/historical/FL/2025_12.csv",
-    "/historical/FL/2026_01.csv",
-    "/historical/FL/2026_02.csv",
-    "/historical/FL/2026_03.csv",
-  ],
-  GA: [
-    "/historical/GA/2025_08.csv",
-    "/historical/GA/2025_09.csv",
-    "/historical/GA/2025_10.csv",
-    "/historical/GA/2025_11.csv",
-    "/historical/GA/2025_12.csv",
-    "/historical/GA/2026_01.csv",
-    "/historical/GA/2026_02.csv",
-    "/historical/GA/2026_03.csv",
-  ],
-  CA: [
-    "/historical/CA/2025_08.csv",
-    "/historical/CA/2025_09.csv",
-    "/historical/CA/2025_10.csv",
-    "/historical/CA/2025_11.csv",
-    "/historical/CA/2025_12.csv",
-    "/historical/CA/2026_01.csv",
-    "/historical/CA/2026_02.csv",
-    "/historical/CA/2026_03.csv",
-    "/historical/CA/2026_04.csv",
-    "/historical/CA/2026_05.csv",
-    "/historical/CA/2026_06.csv",
-    "/historical/CA/2026_07.csv",
-    "/historical/CA/2026_08.csv",
-    "/historical/CA/2026_09.csv",
-    "/historical/CA/2026_10.csv",
-  ],
-  TX: [
-    "/historical/TX/2025_08.csv",
-    "/historical/TX/2025_09.csv",
-    "/historical/TX/2025_10.csv",
-    "/historical/TX/2025_11.csv",
-    "/historical/TX/2025_12.csv",
-    "/historical/TX/2026_01.csv",
-    "/historical/TX/2026_02.csv",
-    "/historical/TX/2026_03.csv",
-    "/historical/TX/2026_04.csv",
-    "/historical/TX/2026_05.csv",
-    "/historical/TX/2026_06.csv",
-    "/historical/TX/2026_07.csv",
-    "/historical/TX/2026_08.csv",
-    "/historical/TX/2026_09.csv",
-    "/historical/TX/2026_10.csv",
-  ],
-}
 
 function parseMetricValue(rawValue) {
   if (!rawValue) return 0
@@ -143,25 +91,50 @@ function parseCsvRows(csvText) {
     .filter(Boolean)
 }
 
-async function fetchStateRows(stateCode) {
-  const candidates = HISTORICAL_FILES_BY_STATE[stateCode] || []
+const DAY_MS = 24 * 60 * 60 * 1000
 
+// Only the months the chosen timeframe can reach, instead of every month on file.
+// The window starts from the first day of the newest month, so it never cuts
+// off data the chart could show.
+function monthsForTimeframe(months, timeframe) {
+  if (timeframe === "all" || !months.length) return months
+
+  const [latestYear, latestMonth] = months[months.length - 1].split("_").map(Number)
+  const cutoff = Date.UTC(latestYear, latestMonth - 1, 1) - Number(timeframe) * DAY_MS
+
+  return months.filter((month) => {
+    const [year, monthNumber] = month.split("_").map(Number)
+    const monthEnd = Date.UTC(year, monthNumber, 1)
+    return monthEnd > cutoff
+  })
+}
+
+// path -> Promise<rows>, so switching timeframe or state back and forth
+// never downloads the same month twice
+const monthCache = new Map()
+
+function fetchMonthRows(path) {
+  if (!monthCache.has(path)) {
+    const request = fetch(`${BASE}${path}`)
+      .then((response) => (response.ok ? response.text() : ""))
+      .then(parseCsvRows)
+      .catch(() => {
+        monthCache.delete(path)
+        return []
+      })
+    monthCache.set(path, request)
+  }
+  return monthCache.get(path)
+}
+
+async function fetchStateRows(stateCode, timeframe) {
+  const months = monthsForTimeframe(HISTORICAL_MONTHS_BY_STATE[stateCode] || [], timeframe)
   const responses = await Promise.all(
-    candidates.map(async (path) => {
-      try {
-        const response = await fetch(`${BASE}${path.replace(/^\//, "")}`)
-        if (!response.ok) return null
-        const text = await response.text()
-        return parseCsvRows(text)
-      } catch {
-        return null
-      }
-    }),
+    months.map((month) => fetchMonthRows(`historical/${stateCode}/${month}.csv`)),
   )
 
   const deduped = new Map()
   for (const rows of responses) {
-    if (!rows?.length) continue
     rows.forEach((row) => {
       deduped.set(`${row.county}|${row.date}`, row)
     })
@@ -179,61 +152,57 @@ function formatDate(dateValue) {
 
 function Data() {
   const [stateCode, setStateCode] = useState("")
-  const [county, setCounty] = useState("")
+  const [selectedCounty, setCounty] = useState("")
   const [timeframe, setTimeframe] = useState("30")
   const [metric, setMetric] = useState("SAIDI")
-  const [stateRows, setStateRows] = useState({})
-  const [loading, setLoading] = useState(true)
-  const [errorMessage, setErrorMessage] = useState("")
+  // Result of the latest finished request, tagged with what it was for
+  const [result, setResult] = useState({ key: "", rows: [], error: "" })
+  const requestKey = stateCode ? `${stateCode}|${timeframe}` : ""
+  const loading = Boolean(requestKey) && result.key !== requestKey
+  const rows = result.rows
+  const errorMessage = loading ? "" : result.error
 
+  // Load only the selected state, and only the months the timeframe needs
   useEffect(() => {
-    const loadData = async () => {
-      setLoading(true)
-      setErrorMessage("")
+    if (!stateCode) return
 
-      try {
-        const results = await Promise.all(
-          STATE_OPTIONS.map(async (state) => {
-            const rows = await fetchStateRows(state.value)
-            return [state.value, rows]
-          }),
-        )
+    const key = `${stateCode}|${timeframe}`
+    let cancelled = false
 
-        const nextRows = Object.fromEntries(results)
-        const hasAnyData = Object.values(nextRows).some((rows) => rows.length > 0)
-
-        if (!hasAnyData) {
-          setErrorMessage("Historical files were not found. Check public/historical paths.")
+    fetchStateRows(stateCode, timeframe)
+      .then((nextRows) => {
+        if (cancelled) return
+        setResult({
+          key,
+          rows: nextRows,
+          error: nextRows.length ? "" : `No historical files were found for ${stateCode}.`,
+        })
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setResult({ key, rows: [], error: "Failed to load historical data files." })
         }
+      })
 
-        setStateRows(nextRows)
-      } catch {
-        setErrorMessage("Failed to load historical data files.")
-      } finally {
-        setLoading(false)
-      }
+    return () => {
+      cancelled = true
     }
-
-    loadData()
-  }, [])
+  }, [stateCode, timeframe])
 
   const counties = useMemo(() => {
-    if (!stateCode || !stateRows[stateCode]) return []
-    return [...new Set(stateRows[stateCode].map((row) => row.county))].sort((a, b) =>
+    if (!stateCode) return []
+    return [...new Set(rows.map((row) => row.county))].sort((a, b) =>
       a.localeCompare(b),
     )
-  }, [stateCode, stateRows])
+  }, [stateCode, rows])
 
-  useEffect(() => {
-    if (county && !counties.includes(county)) {
-      setCounty("")
-    }
-  }, [county, counties])
+  // A county picked for a different state no longer counts as selected
+  const county = counties.includes(selectedCounty) ? selectedCounty : ""
 
   const chartRows = useMemo(() => {
     if (!stateCode || !county) return []
 
-    const rowsForCounty = (stateRows[stateCode] || []).filter(
+    const rowsForCounty = rows.filter(
       (row) => row.county === county,
     )
 
@@ -245,7 +214,7 @@ function Data() {
     const cutoff = latestTimestamp - days * 24 * 60 * 60 * 1000
 
     return rowsForCounty.filter((row) => row.timestamp >= cutoff)
-  }, [county, stateCode, stateRows, timeframe])
+  }, [county, stateCode, rows, timeframe])
 
   return (
     <main className="flex h-full min-h-0 flex-col gap-6 p-6">
