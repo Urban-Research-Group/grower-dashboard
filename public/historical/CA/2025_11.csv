@@ -1,0 +1,755 @@
+State,County,FIPS,SAIDI,SAIFI,Date
+California,Alameda,06001,,0.0,2025-11-03
+California,Alpine,06003,,0.0,2025-11-03
+California,Amador,06005,,0.0,2025-11-03
+California,Butte,06007,,0.0,2025-11-03
+California,Calaveras,06009,,0.0,2025-11-03
+California,Colusa,06011,,0.0,2025-11-03
+California,Contra Costa,06013,,0.0,2025-11-03
+California,Del Norte,06015,,0.0,2025-11-03
+California,El Dorado,06017,,0.0,2025-11-03
+California,Fresno,06019,,0.0,2025-11-03
+California,Glenn,06021,,0.0,2025-11-03
+California,Humboldt,06023,,0.0,2025-11-03
+California,Imperial,06025,,0.0,2025-11-03
+California,Inyo,06027,,0.0,2025-11-03
+California,Kern,06029,,0.0,2025-11-03
+California,Kings,06031,,0.0,2025-11-03
+California,Lake,06033,,0.0,2025-11-03
+California,Lassen,06035,,0.0,2025-11-03
+California,Los Angeles,06037,,0.0,2025-11-03
+California,Madera,06039,,0.0,2025-11-03
+California,Marin,06041,,0.0,2025-11-03
+California,Mariposa,06043,,0.0,2025-11-03
+California,Mendocino,06045,,0.0,2025-11-03
+California,Merced,06047,,0.0,2025-11-03
+California,Modoc,06049,,0.0,2025-11-03
+California,Mono,06051,,0.0,2025-11-03
+California,Monterey,06053,,0.0,2025-11-03
+California,Napa,06055,,0.0,2025-11-03
+California,Nevada,06057,,0.0,2025-11-03
+California,Orange,06059,,0.0,2025-11-03
+California,Placer,06061,,0.0,2025-11-03
+California,Plumas,06063,,0.0,2025-11-03
+California,Riverside,06065,,0.0,2025-11-03
+California,Sacramento,06067,,0.0,2025-11-03
+California,San Benito,06069,,0.0,2025-11-03
+California,San Bernardino,06071,,0.0,2025-11-03
+California,San Diego,06073,,0.0,2025-11-03
+California,San Francisco,06075,,0.0,2025-11-03
+California,San Joaquin,06077,,0.0,2025-11-03
+California,San Luis Obispo,06079,,0.0,2025-11-03
+California,San Mateo,06081,,0.0,2025-11-03
+California,Santa Barbara,06083,,0.0,2025-11-03
+California,Santa Clara,06085,0.001141552511415525,0.0045662100456621,2025-11-03
+California,Santa Cruz,06087,,0.0,2025-11-03
+California,Shasta,06089,,0.0,2025-11-03
+California,Sierra,06091,,0.0,2025-11-03
+California,Siskiyou,06093,,0.0,2025-11-03
+California,Solano,06095,,0.0,2025-11-03
+California,Sonoma,06097,,0.0,2025-11-03
+California,Stanislaus,06099,,0.0,2025-11-03
+California,Sutter,06101,,0.0,2025-11-03
+California,Tehama,06103,,0.0,2025-11-03
+California,Trinity,06105,,0.0,2025-11-03
+California,Tulare,06107,,0.0,2025-11-03
+California,Tuolumne,06109,,0.0,2025-11-03
+California,Ventura,06111,,0.0,2025-11-03
+California,Yolo,06113,,0.0,2025-11-03
+California,Yuba,06115,,0.0,2025-11-03
+California,Alameda,06001,,0.0,2025-11-04
+California,Alpine,06003,,0.0,2025-11-04
+California,Amador,06005,,0.0,2025-11-04
+California,Butte,06007,,0.0,2025-11-04
+California,Calaveras,06009,,0.0,2025-11-04
+California,Colusa,06011,,0.0,2025-11-04
+California,Contra Costa,06013,,0.0,2025-11-04
+California,Del Norte,06015,,0.0,2025-11-04
+California,El Dorado,06017,,0.0,2025-11-04
+California,Fresno,06019,,0.0,2025-11-04
+California,Glenn,06021,,0.0,2025-11-04
+California,Humboldt,06023,,0.0,2025-11-04
+California,Imperial,06025,,0.0,2025-11-04
+California,Inyo,06027,,0.0,2025-11-04
+California,Kern,06029,,0.0,2025-11-04
+California,Kings,06031,,0.0,2025-11-04
+California,Lake,06033,,0.0,2025-11-04
+California,Lassen,06035,,0.0,2025-11-04
+California,Los Angeles,06037,,0.0,2025-11-04
+California,Madera,06039,,0.0,2025-11-04
+California,Marin,06041,,0.0,2025-11-04
+California,Mariposa,06043,,0.0,2025-11-04
+California,Mendocino,06045,,0.0,2025-11-04
+California,Merced,06047,,0.0,2025-11-04
+California,Modoc,06049,,0.0,2025-11-04
+California,Mono,06051,,0.0,2025-11-04
+California,Monterey,06053,,0.0,2025-11-04
+California,Napa,06055,,0.0,2025-11-04
+California,Nevada,06057,,0.0,2025-11-04
+California,Orange,06059,,0.0,2025-11-04
+California,Placer,06061,,0.0,2025-11-04
+California,Plumas,06063,,0.0,2025-11-04
+California,Riverside,06065,,0.0,2025-11-04
+California,Sacramento,06067,,0.0,2025-11-04
+California,San Benito,06069,,0.0,2025-11-04
+California,San Bernardino,06071,,0.0,2025-11-04
+California,San Diego,06073,,0.0,2025-11-04
+California,San Francisco,06075,,0.0,2025-11-04
+California,San Joaquin,06077,,0.0,2025-11-04
+California,San Luis Obispo,06079,,0.0,2025-11-04
+California,San Mateo,06081,,0.0,2025-11-04
+California,Santa Barbara,06083,,0.0,2025-11-04
+California,Santa Clara,06085,,0.0,2025-11-04
+California,Santa Cruz,06087,,0.0,2025-11-04
+California,Shasta,06089,,0.0,2025-11-04
+California,Sierra,06091,,0.0,2025-11-04
+California,Siskiyou,06093,,0.0,2025-11-04
+California,Solano,06095,,0.0,2025-11-04
+California,Sonoma,06097,,0.0,2025-11-04
+California,Stanislaus,06099,,0.0,2025-11-04
+California,Sutter,06101,,0.0,2025-11-04
+California,Tehama,06103,,0.0,2025-11-04
+California,Trinity,06105,,0.0,2025-11-04
+California,Tulare,06107,,0.0,2025-11-04
+California,Tuolumne,06109,,0.0,2025-11-04
+California,Ventura,06111,0.0013568521031207597,0.0027137042062415195,2025-11-04
+California,Yolo,06113,,0.0,2025-11-04
+California,Yuba,06115,,0.0,2025-11-04
+California,Alameda,06001,,0.0,2025-11-05
+California,Alpine,06003,,0.0,2025-11-05
+California,Amador,06005,,0.0,2025-11-05
+California,Butte,06007,,0.0,2025-11-05
+California,Calaveras,06009,,0.0,2025-11-05
+California,Colusa,06011,,0.0,2025-11-05
+California,Contra Costa,06013,,0.0,2025-11-05
+California,Del Norte,06015,,0.0,2025-11-05
+California,El Dorado,06017,,0.0,2025-11-05
+California,Fresno,06019,,0.0,2025-11-05
+California,Glenn,06021,,0.0,2025-11-05
+California,Humboldt,06023,,0.0,2025-11-05
+California,Imperial,06025,,0.0,2025-11-05
+California,Inyo,06027,,0.0,2025-11-05
+California,Kern,06029,,0.0,2025-11-05
+California,Kings,06031,,0.0,2025-11-05
+California,Lake,06033,,0.0,2025-11-05
+California,Lassen,06035,,0.0,2025-11-05
+California,Los Angeles,06037,,0.0,2025-11-05
+California,Madera,06039,,0.0,2025-11-05
+California,Marin,06041,,0.0,2025-11-05
+California,Mariposa,06043,,0.0,2025-11-05
+California,Mendocino,06045,,0.0,2025-11-05
+California,Merced,06047,,0.0,2025-11-05
+California,Modoc,06049,,0.0,2025-11-05
+California,Mono,06051,,0.0,2025-11-05
+California,Monterey,06053,,0.0,2025-11-05
+California,Napa,06055,,0.0,2025-11-05
+California,Nevada,06057,,0.0,2025-11-05
+California,Orange,06059,,0.0,2025-11-05
+California,Placer,06061,,0.0,2025-11-05
+California,Plumas,06063,,0.0,2025-11-05
+California,Riverside,06065,,0.0,2025-11-05
+California,Sacramento,06067,,0.0,2025-11-05
+California,San Benito,06069,,0.0,2025-11-05
+California,San Bernardino,06071,,0.0,2025-11-05
+California,San Diego,06073,,0.0,2025-11-05
+California,San Francisco,06075,,0.0,2025-11-05
+California,San Joaquin,06077,,0.0,2025-11-05
+California,San Luis Obispo,06079,,0.0,2025-11-05
+California,San Mateo,06081,,0.0,2025-11-05
+California,Santa Barbara,06083,,0.0,2025-11-05
+California,Santa Clara,06085,0.0019727403156384504,0.0014347202295552368,2025-11-05
+California,Santa Cruz,06087,,0.0,2025-11-05
+California,Shasta,06089,,0.0,2025-11-05
+California,Sierra,06091,,0.0,2025-11-05
+California,Siskiyou,06093,,0.0,2025-11-05
+California,Solano,06095,,0.0,2025-11-05
+California,Sonoma,06097,,0.0,2025-11-05
+California,Stanislaus,06099,,0.0,2025-11-05
+California,Sutter,06101,,0.0,2025-11-05
+California,Tehama,06103,,0.0,2025-11-05
+California,Trinity,06105,,0.0,2025-11-05
+California,Tulare,06107,,0.0,2025-11-05
+California,Tuolumne,06109,,0.0,2025-11-05
+California,Ventura,06111,0.0013568521031207597,0.0027137042062415195,2025-11-05
+California,Yolo,06113,,0.0,2025-11-05
+California,Yuba,06115,,0.0,2025-11-05
+California,Alameda,06001,,0.0,2025-11-10
+California,Alpine,06003,,0.0,2025-11-10
+California,Amador,06005,,0.0,2025-11-10
+California,Butte,06007,,0.0,2025-11-10
+California,Calaveras,06009,,0.0,2025-11-10
+California,Colusa,06011,,0.0,2025-11-10
+California,Contra Costa,06013,,0.0,2025-11-10
+California,Del Norte,06015,,0.0,2025-11-10
+California,El Dorado,06017,,0.0,2025-11-10
+California,Fresno,06019,,0.0,2025-11-10
+California,Glenn,06021,,0.0,2025-11-10
+California,Humboldt,06023,,0.0,2025-11-10
+California,Imperial,06025,,0.0,2025-11-10
+California,Inyo,06027,,0.0,2025-11-10
+California,Kern,06029,,0.0,2025-11-10
+California,Kings,06031,,0.0,2025-11-10
+California,Lake,06033,,0.0,2025-11-10
+California,Lassen,06035,,0.0,2025-11-10
+California,Los Angeles,06037,,0.0,2025-11-10
+California,Madera,06039,,0.0,2025-11-10
+California,Marin,06041,,0.0,2025-11-10
+California,Mariposa,06043,,0.0,2025-11-10
+California,Mendocino,06045,,0.0,2025-11-10
+California,Merced,06047,,0.0,2025-11-10
+California,Modoc,06049,,0.0,2025-11-10
+California,Mono,06051,,0.0,2025-11-10
+California,Monterey,06053,,0.0,2025-11-10
+California,Napa,06055,,0.0,2025-11-10
+California,Nevada,06057,,0.0,2025-11-10
+California,Orange,06059,,0.0,2025-11-10
+California,Placer,06061,,0.0,2025-11-10
+California,Plumas,06063,,0.0,2025-11-10
+California,Riverside,06065,,0.0,2025-11-10
+California,Sacramento,06067,,0.0,2025-11-10
+California,San Benito,06069,,0.0,2025-11-10
+California,San Bernardino,06071,,0.0,2025-11-10
+California,San Diego,06073,,0.0,2025-11-10
+California,San Francisco,06075,,0.0,2025-11-10
+California,San Joaquin,06077,,0.0,2025-11-10
+California,San Luis Obispo,06079,,0.0,2025-11-10
+California,San Mateo,06081,,0.0,2025-11-10
+California,Santa Barbara,06083,,0.0,2025-11-10
+California,Santa Clara,06085,0.00012138868657441127,0.00024277737314882253,2025-11-10
+California,Santa Cruz,06087,,0.0,2025-11-10
+California,Shasta,06089,,0.0,2025-11-10
+California,Sierra,06091,,0.0,2025-11-10
+California,Siskiyou,06093,,0.0,2025-11-10
+California,Solano,06095,,0.0,2025-11-10
+California,Sonoma,06097,,0.0,2025-11-10
+California,Stanislaus,06099,,0.0,2025-11-10
+California,Sutter,06101,,0.0,2025-11-10
+California,Tehama,06103,,0.0,2025-11-10
+California,Trinity,06105,,0.0,2025-11-10
+California,Tulare,06107,,0.0,2025-11-10
+California,Tuolumne,06109,,0.0,2025-11-10
+California,Ventura,06111,,0.0,2025-11-10
+California,Yolo,06113,,0.0,2025-11-10
+California,Yuba,06115,,0.0,2025-11-10
+California,Alameda,06001,,0.0,2025-11-12
+California,Alpine,06003,,0.0,2025-11-12
+California,Amador,06005,,0.0,2025-11-12
+California,Butte,06007,,0.0,2025-11-12
+California,Calaveras,06009,,0.0,2025-11-12
+California,Colusa,06011,,0.0,2025-11-12
+California,Contra Costa,06013,,0.0,2025-11-12
+California,Del Norte,06015,,0.0,2025-11-12
+California,El Dorado,06017,,0.0,2025-11-12
+California,Fresno,06019,,0.0,2025-11-12
+California,Glenn,06021,,0.0,2025-11-12
+California,Humboldt,06023,,0.0,2025-11-12
+California,Imperial,06025,,0.0,2025-11-12
+California,Inyo,06027,,0.0,2025-11-12
+California,Kern,06029,,0.0,2025-11-12
+California,Kings,06031,,0.0,2025-11-12
+California,Lake,06033,,0.0,2025-11-12
+California,Lassen,06035,,0.0,2025-11-12
+California,Los Angeles,06037,,0.0,2025-11-12
+California,Madera,06039,,0.0,2025-11-12
+California,Marin,06041,,0.0,2025-11-12
+California,Mariposa,06043,,0.0,2025-11-12
+California,Mendocino,06045,,0.0,2025-11-12
+California,Merced,06047,,0.0,2025-11-12
+California,Modoc,06049,,0.0,2025-11-12
+California,Mono,06051,,0.0,2025-11-12
+California,Monterey,06053,,0.0,2025-11-12
+California,Napa,06055,,0.0,2025-11-12
+California,Nevada,06057,,0.0,2025-11-12
+California,Orange,06059,,0.0,2025-11-12
+California,Placer,06061,,0.0,2025-11-12
+California,Plumas,06063,,0.0,2025-11-12
+California,Riverside,06065,,0.0,2025-11-12
+California,Sacramento,06067,,0.0,2025-11-12
+California,San Benito,06069,,0.0,2025-11-12
+California,San Bernardino,06071,,0.0,2025-11-12
+California,San Diego,06073,,0.0,2025-11-12
+California,San Francisco,06075,,0.0,2025-11-12
+California,San Joaquin,06077,,0.0,2025-11-12
+California,San Luis Obispo,06079,,0.0,2025-11-12
+California,San Mateo,06081,,0.0,2025-11-12
+California,Santa Barbara,06083,,0.0,2025-11-12
+California,Santa Clara,06085,0.03327444051825677,0.0356301531213192,2025-11-12
+California,Santa Cruz,06087,,0.0,2025-11-12
+California,Shasta,06089,,0.0,2025-11-12
+California,Sierra,06091,,0.0,2025-11-12
+California,Siskiyou,06093,,0.0,2025-11-12
+California,Solano,06095,,0.0,2025-11-12
+California,Sonoma,06097,,0.0,2025-11-12
+California,Stanislaus,06099,,0.0,2025-11-12
+California,Sutter,06101,,0.0,2025-11-12
+California,Tehama,06103,,0.0,2025-11-12
+California,Trinity,06105,,0.0,2025-11-12
+California,Tulare,06107,,0.0,2025-11-12
+California,Tuolumne,06109,,0.0,2025-11-12
+California,Ventura,06111,,0.0,2025-11-12
+California,Yolo,06113,,0.0,2025-11-12
+California,Yuba,06115,,0.0,2025-11-12
+California,Alameda,06001,,0.0,2025-11-13
+California,Alpine,06003,,0.0,2025-11-13
+California,Amador,06005,,0.0,2025-11-13
+California,Butte,06007,,0.0,2025-11-13
+California,Calaveras,06009,,0.0,2025-11-13
+California,Colusa,06011,,0.0,2025-11-13
+California,Contra Costa,06013,,0.0,2025-11-13
+California,Del Norte,06015,,0.0,2025-11-13
+California,El Dorado,06017,,0.0,2025-11-13
+California,Fresno,06019,,0.0,2025-11-13
+California,Glenn,06021,,0.0,2025-11-13
+California,Humboldt,06023,,0.0,2025-11-13
+California,Imperial,06025,,0.0,2025-11-13
+California,Inyo,06027,,0.0,2025-11-13
+California,Kern,06029,,0.0,2025-11-13
+California,Kings,06031,,0.0,2025-11-13
+California,Lake,06033,,0.0,2025-11-13
+California,Lassen,06035,,0.0,2025-11-13
+California,Los Angeles,06037,,0.0,2025-11-13
+California,Madera,06039,,0.0,2025-11-13
+California,Marin,06041,,0.0,2025-11-13
+California,Mariposa,06043,,0.0,2025-11-13
+California,Mendocino,06045,,0.0,2025-11-13
+California,Merced,06047,,0.0,2025-11-13
+California,Modoc,06049,,0.0,2025-11-13
+California,Mono,06051,,0.0,2025-11-13
+California,Monterey,06053,,0.0,2025-11-13
+California,Napa,06055,,0.0,2025-11-13
+California,Nevada,06057,,0.0,2025-11-13
+California,Orange,06059,,0.0,2025-11-13
+California,Placer,06061,,0.0,2025-11-13
+California,Plumas,06063,,0.0,2025-11-13
+California,Riverside,06065,,0.0,2025-11-13
+California,Sacramento,06067,,0.0,2025-11-13
+California,San Benito,06069,,0.0,2025-11-13
+California,San Bernardino,06071,,0.0,2025-11-13
+California,San Diego,06073,,0.0,2025-11-13
+California,San Francisco,06075,,0.0,2025-11-13
+California,San Joaquin,06077,,0.0,2025-11-13
+California,San Luis Obispo,06079,,0.0,2025-11-13
+California,San Mateo,06081,,0.0,2025-11-13
+California,Santa Barbara,06083,,0.0,2025-11-13
+California,Santa Clara,06085,0.28317223198594027,0.24253075571177504,2025-11-13
+California,Santa Cruz,06087,,0.0,2025-11-13
+California,Shasta,06089,,0.0,2025-11-13
+California,Sierra,06091,,0.0,2025-11-13
+California,Siskiyou,06093,,0.0,2025-11-13
+California,Solano,06095,,0.0,2025-11-13
+California,Sonoma,06097,,0.0,2025-11-13
+California,Stanislaus,06099,,0.0,2025-11-13
+California,Sutter,06101,,0.0,2025-11-13
+California,Tehama,06103,,0.0,2025-11-13
+California,Trinity,06105,,0.0,2025-11-13
+California,Tulare,06107,,0.0,2025-11-13
+California,Tuolumne,06109,,0.0,2025-11-13
+California,Ventura,06111,,0.0,2025-11-13
+California,Yolo,06113,,0.0,2025-11-13
+California,Yuba,06115,,0.0,2025-11-13
+California,Alameda,06001,,0.0,2025-11-17
+California,Alpine,06003,,0.0,2025-11-17
+California,Amador,06005,,0.0,2025-11-17
+California,Butte,06007,,0.0,2025-11-17
+California,Calaveras,06009,,0.0,2025-11-17
+California,Colusa,06011,,0.0,2025-11-17
+California,Contra Costa,06013,,0.0,2025-11-17
+California,Del Norte,06015,,0.0,2025-11-17
+California,El Dorado,06017,,0.0,2025-11-17
+California,Fresno,06019,,0.0,2025-11-17
+California,Glenn,06021,,0.0,2025-11-17
+California,Humboldt,06023,,0.0,2025-11-17
+California,Imperial,06025,,0.0,2025-11-17
+California,Inyo,06027,,0.0,2025-11-17
+California,Kern,06029,,0.0,2025-11-17
+California,Kings,06031,,0.0,2025-11-17
+California,Lake,06033,,0.0,2025-11-17
+California,Lassen,06035,,0.0,2025-11-17
+California,Los Angeles,06037,,0.0,2025-11-17
+California,Madera,06039,,0.0,2025-11-17
+California,Marin,06041,,0.0,2025-11-17
+California,Mariposa,06043,,0.0,2025-11-17
+California,Mendocino,06045,,0.0,2025-11-17
+California,Merced,06047,,0.0,2025-11-17
+California,Modoc,06049,,0.0,2025-11-17
+California,Mono,06051,,0.0,2025-11-17
+California,Monterey,06053,,0.0,2025-11-17
+California,Napa,06055,,0.0,2025-11-17
+California,Nevada,06057,,0.0,2025-11-17
+California,Orange,06059,,0.0,2025-11-17
+California,Placer,06061,,0.0,2025-11-17
+California,Plumas,06063,,0.0,2025-11-17
+California,Riverside,06065,,0.0,2025-11-17
+California,Sacramento,06067,,0.0,2025-11-17
+California,San Benito,06069,,0.0,2025-11-17
+California,San Bernardino,06071,,0.0,2025-11-17
+California,San Diego,06073,,0.0,2025-11-17
+California,San Francisco,06075,,0.0,2025-11-17
+California,San Joaquin,06077,,0.0,2025-11-17
+California,San Luis Obispo,06079,,0.0,2025-11-17
+California,San Mateo,06081,,0.0,2025-11-17
+California,Santa Barbara,06083,,0.0,2025-11-17
+California,Santa Clara,06085,0.004007772649987855,0.00048579062424095217,2025-11-17
+California,Santa Cruz,06087,,0.0,2025-11-17
+California,Shasta,06089,,0.0,2025-11-17
+California,Sierra,06091,,0.0,2025-11-17
+California,Siskiyou,06093,,0.0,2025-11-17
+California,Solano,06095,,0.0,2025-11-17
+California,Sonoma,06097,,0.0,2025-11-17
+California,Stanislaus,06099,,0.0,2025-11-17
+California,Sutter,06101,,0.0,2025-11-17
+California,Tehama,06103,,0.0,2025-11-17
+California,Trinity,06105,,0.0,2025-11-17
+California,Tulare,06107,,0.0,2025-11-17
+California,Tuolumne,06109,,0.0,2025-11-17
+California,Ventura,06111,,0.0,2025-11-17
+California,Yolo,06113,,0.0,2025-11-17
+California,Yuba,06115,,0.0,2025-11-17
+California,Alameda,06001,,0.0,2025-11-18
+California,Alpine,06003,,0.0,2025-11-18
+California,Amador,06005,,0.0,2025-11-18
+California,Butte,06007,,0.0,2025-11-18
+California,Calaveras,06009,,0.0,2025-11-18
+California,Colusa,06011,,0.0,2025-11-18
+California,Contra Costa,06013,,0.0,2025-11-18
+California,Del Norte,06015,,0.0,2025-11-18
+California,El Dorado,06017,,0.0,2025-11-18
+California,Fresno,06019,,0.0,2025-11-18
+California,Glenn,06021,,0.0,2025-11-18
+California,Humboldt,06023,,0.0,2025-11-18
+California,Imperial,06025,,0.0,2025-11-18
+California,Inyo,06027,,0.0,2025-11-18
+California,Kern,06029,,0.0,2025-11-18
+California,Kings,06031,,0.0,2025-11-18
+California,Lake,06033,,0.0,2025-11-18
+California,Lassen,06035,,0.0,2025-11-18
+California,Los Angeles,06037,,0.0,2025-11-18
+California,Madera,06039,,0.0,2025-11-18
+California,Marin,06041,,0.0,2025-11-18
+California,Mariposa,06043,,0.0,2025-11-18
+California,Mendocino,06045,,0.0,2025-11-18
+California,Merced,06047,,0.0,2025-11-18
+California,Modoc,06049,,0.0,2025-11-18
+California,Mono,06051,,0.0,2025-11-18
+California,Monterey,06053,,0.0,2025-11-18
+California,Napa,06055,,0.0,2025-11-18
+California,Nevada,06057,,0.0,2025-11-18
+California,Orange,06059,,0.0,2025-11-18
+California,Placer,06061,,0.0,2025-11-18
+California,Plumas,06063,,0.0,2025-11-18
+California,Riverside,06065,,0.0,2025-11-18
+California,Sacramento,06067,,0.0,2025-11-18
+California,San Benito,06069,,0.0,2025-11-18
+California,San Bernardino,06071,,0.0,2025-11-18
+California,San Diego,06073,,0.0,2025-11-18
+California,San Francisco,06075,,0.0,2025-11-18
+California,San Joaquin,06077,,0.0,2025-11-18
+California,San Luis Obispo,06079,,0.0,2025-11-18
+California,San Mateo,06081,,0.0,2025-11-18
+California,Santa Barbara,06083,,0.0,2025-11-18
+California,Santa Clara,06085,0.011901870293903327,0.002428953121204761,2025-11-18
+California,Santa Cruz,06087,,0.0,2025-11-18
+California,Shasta,06089,,0.0,2025-11-18
+California,Sierra,06091,,0.0,2025-11-18
+California,Siskiyou,06093,,0.0,2025-11-18
+California,Solano,06095,,0.0,2025-11-18
+California,Sonoma,06097,,0.0,2025-11-18
+California,Stanislaus,06099,,0.0,2025-11-18
+California,Sutter,06101,,0.0,2025-11-18
+California,Tehama,06103,,0.0,2025-11-18
+California,Trinity,06105,,0.0,2025-11-18
+California,Tulare,06107,,0.0,2025-11-18
+California,Tuolumne,06109,,0.0,2025-11-18
+California,Ventura,06111,,0.0,2025-11-18
+California,Yolo,06113,,0.0,2025-11-18
+California,Yuba,06115,,0.0,2025-11-18
+California,Alameda,06001,,0.0,2025-11-19
+California,Alpine,06003,,0.0,2025-11-19
+California,Amador,06005,,0.0,2025-11-19
+California,Butte,06007,,0.0,2025-11-19
+California,Calaveras,06009,,0.0,2025-11-19
+California,Colusa,06011,,0.0,2025-11-19
+California,Contra Costa,06013,,0.0,2025-11-19
+California,Del Norte,06015,,0.0,2025-11-19
+California,El Dorado,06017,,0.0,2025-11-19
+California,Fresno,06019,,0.0,2025-11-19
+California,Glenn,06021,,0.0,2025-11-19
+California,Humboldt,06023,,0.0,2025-11-19
+California,Imperial,06025,,0.0,2025-11-19
+California,Inyo,06027,,0.0,2025-11-19
+California,Kern,06029,,0.0,2025-11-19
+California,Kings,06031,,0.0,2025-11-19
+California,Lake,06033,,0.0,2025-11-19
+California,Lassen,06035,,0.0,2025-11-19
+California,Los Angeles,06037,,0.0,2025-11-19
+California,Madera,06039,,0.0,2025-11-19
+California,Marin,06041,,0.0,2025-11-19
+California,Mariposa,06043,,0.0,2025-11-19
+California,Mendocino,06045,,0.0,2025-11-19
+California,Merced,06047,,0.0,2025-11-19
+California,Modoc,06049,,0.0,2025-11-19
+California,Mono,06051,,0.0,2025-11-19
+California,Monterey,06053,,0.0,2025-11-19
+California,Napa,06055,,0.0,2025-11-19
+California,Nevada,06057,,0.0,2025-11-19
+California,Orange,06059,,0.0,2025-11-19
+California,Placer,06061,,0.0,2025-11-19
+California,Plumas,06063,,0.0,2025-11-19
+California,Riverside,06065,,0.0,2025-11-19
+California,Sacramento,06067,,0.0,2025-11-19
+California,San Benito,06069,,0.0,2025-11-19
+California,San Bernardino,06071,,0.0,2025-11-19
+California,San Diego,06073,,0.0,2025-11-19
+California,San Francisco,06075,,0.0,2025-11-19
+California,San Joaquin,06077,,0.0,2025-11-19
+California,San Luis Obispo,06079,,0.0,2025-11-19
+California,San Mateo,06081,,0.0,2025-11-19
+California,Santa Barbara,06083,,0.0,2025-11-19
+California,Santa Clara,06085,0.00030354541039339484,0.00048567265662943174,2025-11-19
+California,Santa Cruz,06087,,0.0,2025-11-19
+California,Shasta,06089,,0.0,2025-11-19
+California,Sierra,06091,,0.0,2025-11-19
+California,Siskiyou,06093,,0.0,2025-11-19
+California,Solano,06095,,0.0,2025-11-19
+California,Sonoma,06097,,0.0,2025-11-19
+California,Stanislaus,06099,,0.0,2025-11-19
+California,Sutter,06101,,0.0,2025-11-19
+California,Tehama,06103,,0.0,2025-11-19
+California,Trinity,06105,,0.0,2025-11-19
+California,Tulare,06107,,0.0,2025-11-19
+California,Tuolumne,06109,,0.0,2025-11-19
+California,Ventura,06111,,0.0,2025-11-19
+California,Yolo,06113,,0.0,2025-11-19
+California,Yuba,06115,,0.0,2025-11-19
+California,Alameda,06001,,0.0,2025-11-20
+California,Alpine,06003,,0.0,2025-11-20
+California,Amador,06005,,0.0,2025-11-20
+California,Butte,06007,,0.0,2025-11-20
+California,Calaveras,06009,,0.0,2025-11-20
+California,Colusa,06011,,0.0,2025-11-20
+California,Contra Costa,06013,,0.0,2025-11-20
+California,Del Norte,06015,,0.0,2025-11-20
+California,El Dorado,06017,,0.0,2025-11-20
+California,Fresno,06019,,0.0,2025-11-20
+California,Glenn,06021,,0.0,2025-11-20
+California,Humboldt,06023,,0.0,2025-11-20
+California,Imperial,06025,,0.0,2025-11-20
+California,Inyo,06027,,0.0,2025-11-20
+California,Kern,06029,,0.0,2025-11-20
+California,Kings,06031,,0.0,2025-11-20
+California,Lake,06033,,0.0,2025-11-20
+California,Lassen,06035,,0.0,2025-11-20
+California,Los Angeles,06037,,0.0,2025-11-20
+California,Madera,06039,,0.0,2025-11-20
+California,Marin,06041,,0.0,2025-11-20
+California,Mariposa,06043,,0.0,2025-11-20
+California,Mendocino,06045,,0.0,2025-11-20
+California,Merced,06047,,0.0,2025-11-20
+California,Modoc,06049,,0.0,2025-11-20
+California,Mono,06051,,0.0,2025-11-20
+California,Monterey,06053,,0.0,2025-11-20
+California,Napa,06055,,0.0,2025-11-20
+California,Nevada,06057,,0.0,2025-11-20
+California,Orange,06059,,0.0,2025-11-20
+California,Placer,06061,,0.0,2025-11-20
+California,Plumas,06063,,0.0,2025-11-20
+California,Riverside,06065,,0.0,2025-11-20
+California,Sacramento,06067,,0.0,2025-11-20
+California,San Benito,06069,,0.0,2025-11-20
+California,San Bernardino,06071,,0.0,2025-11-20
+California,San Diego,06073,,0.0,2025-11-20
+California,San Francisco,06075,,0.0,2025-11-20
+California,San Joaquin,06077,,0.0,2025-11-20
+California,San Luis Obispo,06079,,0.0,2025-11-20
+California,San Mateo,06081,,0.0,2025-11-20
+California,Santa Barbara,06083,,0.0,2025-11-20
+California,Santa Clara,06085,0.00021987686895338611,0.0008795074758135445,2025-11-20
+California,Santa Cruz,06087,,0.0,2025-11-20
+California,Shasta,06089,,0.0,2025-11-20
+California,Sierra,06091,,0.0,2025-11-20
+California,Siskiyou,06093,,0.0,2025-11-20
+California,Solano,06095,,0.0,2025-11-20
+California,Sonoma,06097,,0.0,2025-11-20
+California,Stanislaus,06099,,0.0,2025-11-20
+California,Sutter,06101,,0.0,2025-11-20
+California,Tehama,06103,,0.0,2025-11-20
+California,Trinity,06105,,0.0,2025-11-20
+California,Tulare,06107,,0.0,2025-11-20
+California,Tuolumne,06109,,0.0,2025-11-20
+California,Ventura,06111,,0.0,2025-11-20
+California,Yolo,06113,,0.0,2025-11-20
+California,Yuba,06115,,0.0,2025-11-20
+California,Alameda,06001,,0.0,2025-11-21
+California,Alpine,06003,,0.0,2025-11-21
+California,Amador,06005,,0.0,2025-11-21
+California,Butte,06007,,0.0,2025-11-21
+California,Calaveras,06009,,0.0,2025-11-21
+California,Colusa,06011,,0.0,2025-11-21
+California,Contra Costa,06013,,0.0,2025-11-21
+California,Del Norte,06015,,0.0,2025-11-21
+California,El Dorado,06017,,0.0,2025-11-21
+California,Fresno,06019,,0.0,2025-11-21
+California,Glenn,06021,,0.0,2025-11-21
+California,Humboldt,06023,,0.0,2025-11-21
+California,Imperial,06025,,0.0,2025-11-21
+California,Inyo,06027,,0.0,2025-11-21
+California,Kern,06029,,0.0,2025-11-21
+California,Kings,06031,,0.0,2025-11-21
+California,Lake,06033,,0.0,2025-11-21
+California,Lassen,06035,,0.0,2025-11-21
+California,Los Angeles,06037,,0.0,2025-11-21
+California,Madera,06039,,0.0,2025-11-21
+California,Marin,06041,,0.0,2025-11-21
+California,Mariposa,06043,,0.0,2025-11-21
+California,Mendocino,06045,,0.0,2025-11-21
+California,Merced,06047,,0.0,2025-11-21
+California,Modoc,06049,,0.0,2025-11-21
+California,Mono,06051,,0.0,2025-11-21
+California,Monterey,06053,,0.0,2025-11-21
+California,Napa,06055,,0.0,2025-11-21
+California,Nevada,06057,,0.0,2025-11-21
+California,Orange,06059,,0.0,2025-11-21
+California,Placer,06061,,0.0,2025-11-21
+California,Plumas,06063,,0.0,2025-11-21
+California,Riverside,06065,,0.0,2025-11-21
+California,Sacramento,06067,,0.0,2025-11-21
+California,San Benito,06069,,0.0,2025-11-21
+California,San Bernardino,06071,,0.0,2025-11-21
+California,San Diego,06073,,0.0,2025-11-21
+California,San Francisco,06075,,0.0,2025-11-21
+California,San Joaquin,06077,,0.0,2025-11-21
+California,San Luis Obispo,06079,,0.0,2025-11-21
+California,San Mateo,06081,,0.0,2025-11-21
+California,Santa Barbara,06083,,0.0,2025-11-21
+California,Santa Clara,06085,0.01050999310820124,0.0027567195037904893,2025-11-21
+California,Santa Cruz,06087,,0.0,2025-11-21
+California,Shasta,06089,,0.0,2025-11-21
+California,Sierra,06091,,0.0,2025-11-21
+California,Siskiyou,06093,,0.0,2025-11-21
+California,Solano,06095,,0.0,2025-11-21
+California,Sonoma,06097,,0.0,2025-11-21
+California,Stanislaus,06099,,0.0,2025-11-21
+California,Sutter,06101,,0.0,2025-11-21
+California,Tehama,06103,,0.0,2025-11-21
+California,Trinity,06105,,0.0,2025-11-21
+California,Tulare,06107,,0.0,2025-11-21
+California,Tuolumne,06109,,0.0,2025-11-21
+California,Ventura,06111,,0.0,2025-11-21
+California,Yolo,06113,,0.0,2025-11-21
+California,Yuba,06115,,0.0,2025-11-21
+California,Alameda,06001,,0.0,2025-11-24
+California,Alpine,06003,,0.0,2025-11-24
+California,Amador,06005,,0.0,2025-11-24
+California,Butte,06007,,0.0,2025-11-24
+California,Calaveras,06009,,0.0,2025-11-24
+California,Colusa,06011,,0.0,2025-11-24
+California,Contra Costa,06013,,0.0,2025-11-24
+California,Del Norte,06015,,0.0,2025-11-24
+California,El Dorado,06017,,0.0,2025-11-24
+California,Fresno,06019,,0.0,2025-11-24
+California,Glenn,06021,,0.0,2025-11-24
+California,Humboldt,06023,,0.0,2025-11-24
+California,Imperial,06025,,0.0,2025-11-24
+California,Inyo,06027,,0.0,2025-11-24
+California,Kern,06029,,0.0,2025-11-24
+California,Kings,06031,,0.0,2025-11-24
+California,Lake,06033,,0.0,2025-11-24
+California,Lassen,06035,,0.0,2025-11-24
+California,Los Angeles,06037,,0.0,2025-11-24
+California,Madera,06039,,0.0,2025-11-24
+California,Marin,06041,,0.0,2025-11-24
+California,Mariposa,06043,,0.0,2025-11-24
+California,Mendocino,06045,,0.0,2025-11-24
+California,Merced,06047,,0.0,2025-11-24
+California,Modoc,06049,,0.0,2025-11-24
+California,Mono,06051,,0.0,2025-11-24
+California,Monterey,06053,,0.0,2025-11-24
+California,Napa,06055,,0.0,2025-11-24
+California,Nevada,06057,,0.0,2025-11-24
+California,Orange,06059,,0.0,2025-11-24
+California,Placer,06061,,0.0,2025-11-24
+California,Plumas,06063,,0.0,2025-11-24
+California,Riverside,06065,,0.0,2025-11-24
+California,Sacramento,06067,,0.0,2025-11-24
+California,San Benito,06069,,0.0,2025-11-24
+California,San Bernardino,06071,,0.0,2025-11-24
+California,San Diego,06073,,0.0,2025-11-24
+California,San Francisco,06075,,0.0,2025-11-24
+California,San Joaquin,06077,,0.0,2025-11-24
+California,San Luis Obispo,06079,,0.0,2025-11-24
+California,San Mateo,06081,,0.0,2025-11-24
+California,Santa Barbara,06083,,0.0,2025-11-24
+California,Santa Clara,06085,0.06874569262577533,0.039283252929014474,2025-11-24
+California,Santa Cruz,06087,,0.0,2025-11-24
+California,Shasta,06089,,0.0,2025-11-24
+California,Sierra,06091,,0.0,2025-11-24
+California,Siskiyou,06093,,0.0,2025-11-24
+California,Solano,06095,,0.0,2025-11-24
+California,Sonoma,06097,,0.0,2025-11-24
+California,Stanislaus,06099,,0.0,2025-11-24
+California,Sutter,06101,,0.0,2025-11-24
+California,Tehama,06103,,0.0,2025-11-24
+California,Trinity,06105,,0.0,2025-11-24
+California,Tulare,06107,,0.0,2025-11-24
+California,Tuolumne,06109,,0.0,2025-11-24
+California,Ventura,06111,,0.0,2025-11-24
+California,Yolo,06113,,0.0,2025-11-24
+California,Yuba,06115,,0.0,2025-11-24
+California,Alameda,06001,,0.0,2025-11-30
+California,Alpine,06003,,0.0,2025-11-30
+California,Amador,06005,,0.0,2025-11-30
+California,Butte,06007,,0.0,2025-11-30
+California,Calaveras,06009,,0.0,2025-11-30
+California,Colusa,06011,,0.0,2025-11-30
+California,Contra Costa,06013,,0.0,2025-11-30
+California,Del Norte,06015,,0.0,2025-11-30
+California,El Dorado,06017,,0.0,2025-11-30
+California,Fresno,06019,,0.0,2025-11-30
+California,Glenn,06021,,0.0,2025-11-30
+California,Humboldt,06023,,0.0,2025-11-30
+California,Imperial,06025,,0.0,2025-11-30
+California,Inyo,06027,,0.0,2025-11-30
+California,Kern,06029,,0.0,2025-11-30
+California,Kings,06031,,0.0,2025-11-30
+California,Lake,06033,,0.0,2025-11-30
+California,Lassen,06035,,0.0,2025-11-30
+California,Los Angeles,06037,,0.0,2025-11-30
+California,Madera,06039,,0.0,2025-11-30
+California,Marin,06041,,0.0,2025-11-30
+California,Mariposa,06043,,0.0,2025-11-30
+California,Mendocino,06045,,0.0,2025-11-30
+California,Merced,06047,,0.0,2025-11-30
+California,Modoc,06049,,0.0,2025-11-30
+California,Mono,06051,,0.0,2025-11-30
+California,Monterey,06053,,0.0,2025-11-30
+California,Napa,06055,,0.0,2025-11-30
+California,Nevada,06057,,0.0,2025-11-30
+California,Orange,06059,,0.0,2025-11-30
+California,Placer,06061,,0.0,2025-11-30
+California,Plumas,06063,,0.0,2025-11-30
+California,Riverside,06065,,0.0,2025-11-30
+California,Sacramento,06067,,0.0,2025-11-30
+California,San Benito,06069,,0.0,2025-11-30
+California,San Bernardino,06071,,0.0,2025-11-30
+California,San Diego,06073,,0.0,2025-11-30
+California,San Francisco,06075,,0.0,2025-11-30
+California,San Joaquin,06077,,0.0,2025-11-30
+California,San Luis Obispo,06079,,0.0,2025-11-30
+California,San Mateo,06081,,0.0,2025-11-30
+California,Santa Barbara,06083,,0.0,2025-11-30
+California,Santa Clara,06085,0.3706516952884192,0.6532364597093792,2025-11-30
+California,Santa Cruz,06087,,0.0,2025-11-30
+California,Shasta,06089,,0.0,2025-11-30
+California,Sierra,06091,,0.0,2025-11-30
+California,Siskiyou,06093,,0.0,2025-11-30
+California,Solano,06095,,0.0,2025-11-30
+California,Sonoma,06097,,0.0,2025-11-30
+California,Stanislaus,06099,,0.0,2025-11-30
+California,Sutter,06101,,0.0,2025-11-30
+California,Tehama,06103,,0.0,2025-11-30
+California,Trinity,06105,,0.0,2025-11-30
+California,Tulare,06107,,0.0,2025-11-30
+California,Tuolumne,06109,,0.0,2025-11-30
+California,Ventura,06111,,0.0,2025-11-30
+California,Yolo,06113,,0.0,2025-11-30
+California,Yuba,06115,,0.0,2025-11-30
