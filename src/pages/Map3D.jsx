@@ -39,6 +39,65 @@ const SCROLL_ZOOM = {
   smooth: false,
 };
 
+// us-states.json only has state names; counties.geojson uses STATEFP.
+const STATE_NAME_TO_FIPS = {
+  Alabama: "01",
+  Alaska: "02",
+  Arizona: "04",
+  Arkansas: "05",
+  California: "06",
+  Colorado: "08",
+  Connecticut: "09",
+  Delaware: "10",
+  "District of Columbia": "11",
+  Florida: "12",
+  Georgia: "13",
+  Hawaii: "15",
+  Idaho: "16",
+  Illinois: "17",
+  Indiana: "18",
+  Iowa: "19",
+  Kansas: "20",
+  Kentucky: "21",
+  Louisiana: "22",
+  Maine: "23",
+  Maryland: "24",
+  Massachusetts: "25",
+  Michigan: "26",
+  Minnesota: "27",
+  Mississippi: "28",
+  Missouri: "29",
+  Montana: "30",
+  Nebraska: "31",
+  Nevada: "32",
+  "New Hampshire": "33",
+  "New Jersey": "34",
+  "New Mexico": "35",
+  "New York": "36",
+  "North Carolina": "37",
+  "North Dakota": "38",
+  Ohio: "39",
+  Oklahoma: "40",
+  Oregon: "41",
+  Pennsylvania: "42",
+  "Rhode Island": "44",
+  "South Carolina": "45",
+  "South Dakota": "46",
+  Tennessee: "47",
+  Texas: "48",
+  Utah: "49",
+  Vermont: "50",
+  Virginia: "51",
+  Washington: "53",
+  "West Virginia": "54",
+  Wisconsin: "55",
+  Wyoming: "56",
+};
+
+const STATE_FIPS_TO_NAME = Object.fromEntries(
+  Object.entries(STATE_NAME_TO_FIPS).map(([name, fips]) => [fips, name]),
+);
+
 const INITIAL_VIEW_STATE = {
   longitude: -79.0,
   latitude: 35.5,
@@ -129,6 +188,79 @@ function clamp(n, min, max) {
   return Math.max(min, Math.min(max, n));
 }
 
+function pointInRing(lng, lat, ring) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const xi = ring[i][0];
+    const yi = ring[i][1];
+    const xj = ring[j][0];
+    const yj = ring[j][1];
+    const intersect =
+      yi > lat !== yj > lat &&
+      lng < ((xj - xi) * (lat - yi)) / (yj - yi + 0.0) + xi;
+    if (intersect) inside = !inside;
+  }
+  return inside;
+}
+
+function pointInFeature(lng, lat, feature) {
+  const geom = feature?.geometry;
+  if (!geom) return false;
+  const polys =
+    geom.type === "Polygon"
+      ? [geom.coordinates]
+      : geom.type === "MultiPolygon"
+        ? geom.coordinates
+        : [];
+  for (const polygon of polys) {
+    const [outer, ...holes] = polygon;
+    if (!pointInRing(lng, lat, outer)) continue;
+    if (holes.some((hole) => pointInRing(lng, lat, hole))) continue;
+    return true;
+  }
+  return false;
+}
+
+function getStateNameFromFeature(feature) {
+  const props = feature?.properties || {};
+  return (
+    props.STATE_NAME ||
+    props.STATE ||
+    props.NAME ||
+    props.Name ||
+    props.name ||
+    null
+  );
+}
+
+function getStateFipsFromFeature(feature) {
+  const props = feature?.properties || {};
+  if (props.STATEFP) return String(props.STATEFP).padStart(2, "0");
+  const name = getStateNameFromFeature(feature);
+  if (name && STATE_NAME_TO_FIPS[name]) return STATE_NAME_TO_FIPS[name];
+  const rawFips =
+    props.FIPS ||
+    props.fips ||
+    props.GEOID ||
+    props.geoid ||
+    (props.STATEFP && props.COUNTYFP ? `${props.STATEFP}${props.COUNTYFP}` : null);
+  const normalized = normalizeFips(rawFips);
+  return normalized ? normalized.slice(0, 2) : null;
+}
+
+function findStateAtLngLat(statesGeojson, lng, lat) {
+  if (!statesGeojson?.features?.length) return null;
+  for (const feature of statesGeojson.features) {
+    if (pointInFeature(lng, lat, feature)) {
+      const name = getStateNameFromFeature(feature);
+      const fips = name ? STATE_NAME_TO_FIPS[name] : null;
+      if (!fips) return null;
+      return { fips, name, feature };
+    }
+  }
+  return null;
+}
+
 export default function Map3D({ searchTerm }) {
   const [countiesGeojson, setCountiesGeojson] = useState(null);
   const [statesGeojson, setStatesGeojson] = useState(null);
@@ -140,6 +272,8 @@ export default function Map3D({ searchTerm }) {
   const [height3D, setHeight3D] = useState(true);
   const [selectedLocation, setSelectedLocation] = useState(null);
   const [selectedFeature, setSelectedFeature] = useState(null);
+  // When zoomed to counties, only render one state's counties (e.g. Georgia).
+  const [focusedState, setFocusedState] = useState(null); // { fips, name }
   const searchHighlightTimeoutRef = useRef(null);
 
   const containerRef = useRef(null);
@@ -477,10 +611,20 @@ export default function Map3D({ searchTerm }) {
       selectedMode = "county";
       setSelectedLocation({ mode: "county", key: countyFips });
       setSelectedFeature({ mode: "county", feature: match });
+      const countyStateFips =
+        props.STATEFP
+          ? String(props.STATEFP).padStart(2, "0")
+          : countyFips.slice(0, 2);
+      setFocusedState({
+        fips: countyStateFips,
+        name: STATE_FIPS_TO_NAME[countyStateFips] || stateName || countyStateFips,
+      });
     } else if (stateName) {
       selectedMode = "state";
       setSelectedLocation({ mode: "state", key: stateName.toLowerCase() });
       setSelectedFeature({ mode: "state", feature: match });
+      const fips = STATE_NAME_TO_FIPS[stateName];
+      if (fips) setFocusedState({ fips, name: stateName });
     }
     searchHighlightTimeoutRef.current = setTimeout(() => {
       setSelectedLocation(null);
@@ -514,6 +658,94 @@ export default function Map3D({ searchTerm }) {
       }
     };
   }, []);
+
+  // Zoomed out → clear focus. Zoomed in → keep county layer locked to the state
+  // under the map center (clicking a state also sets this before zooming in).
+  useEffect(() => {
+    if (viewState.zoom < ZOOM_THRESHOLD) {
+      if (focusedState) setFocusedState(null);
+      return;
+    }
+    if (!statesGeojson) return;
+    const hit = findStateAtLngLat(
+      statesGeojson,
+      viewState.longitude,
+      viewState.latitude,
+    );
+    if (!hit) return;
+    if (!focusedState || focusedState.fips !== hit.fips) {
+      setFocusedState({ fips: hit.fips, name: hit.name });
+    }
+  }, [
+    viewState.zoom,
+    viewState.longitude,
+    viewState.latitude,
+    statesGeojson,
+    focusedState,
+  ]);
+
+  const focusStateFeature = (feature) => {
+    const name = getStateNameFromFeature(feature);
+    const fips = name ? STATE_NAME_TO_FIPS[name] : null;
+    if (!fips || !name) return;
+
+    setFocusedState({ fips, name });
+
+    const bounds = getFeatureBounds(feature);
+    if (!bounds || !size.width || !size.height) {
+      setViewState((vs) =>
+        constrainViewState({
+          ...vs,
+          zoom: Math.max(vs.zoom, ZOOM_THRESHOLD + 0.4),
+          transitionDuration: 600,
+        }),
+      );
+      return;
+    }
+
+    const { longitude, latitude, zoom } = new WebMercatorViewport({
+      width: size.width,
+      height: size.height,
+    }).fitBounds(
+      [
+        [bounds.minLng, bounds.minLat],
+        [bounds.maxLng, bounds.maxLat],
+      ],
+      { padding: 48 },
+    );
+
+    setViewState((vs) =>
+      constrainViewState({
+        ...vs,
+        longitude,
+        latitude,
+        zoom: Math.max(zoom, ZOOM_THRESHOLD + 0.2),
+        transitionDuration: 700,
+      }),
+    );
+  };
+
+  const exitCountyFocus = () => {
+    setFocusedState(null);
+    setViewState((vs) =>
+      constrainViewState({
+        ...vs,
+        zoom: ZOOM_THRESHOLD - 0.6,
+        transitionDuration: 500,
+      }),
+    );
+  };
+
+  const focusedCountiesGeojson = useMemo(() => {
+    if (!countiesGeojson) return null;
+    if (!focusedState?.fips) return null;
+    return {
+      type: "FeatureCollection",
+      features: countiesGeojson.features.filter(
+        (f) => String(f.properties?.STATEFP || "").padStart(2, "0") === focusedState.fips,
+      ),
+    };
+  }, [countiesGeojson, focusedState]);
 
   // ---- Color scale tuning ----
   // Anything at or above the cap gets the max color (red). Adjust per metric
@@ -611,15 +843,22 @@ export default function Map3D({ searchTerm }) {
               saifi: m?.avgSaifi ?? null,
             });
           },
+          onClick: (info) => {
+            if (info?.object) focusStateFeature(info.object);
+          },
         }),
       );
     }
 
-    if (countiesGeojson && viewState.zoom >= ZOOM_THRESHOLD) {
+    if (
+      focusedCountiesGeojson &&
+      focusedCountiesGeojson.features.length > 0 &&
+      viewState.zoom >= ZOOM_THRESHOLD
+    ) {
       layers.push(
         new GeoJsonLayer({
-          id: `counties-${metric}`,
-          data: countiesGeojson,
+          id: `counties-${metric}-${focusedState?.fips || "none"}`,
+          data: focusedCountiesGeojson,
           pickable: true,
           autoHighlight: true,
           highlightColor: [255, 255, 255, 220],
@@ -696,7 +935,18 @@ export default function Map3D({ searchTerm }) {
     }
 
     return layers;
-  }, [countiesGeojson, statesGeojson, metrics, stateMetrics, viewState.zoom, metric, height3D, selectedLocation, selectedFeature]);
+  }, [
+    focusedCountiesGeojson,
+    focusedState,
+    statesGeojson,
+    metrics,
+    stateMetrics,
+    viewState.zoom,
+    metric,
+    height3D,
+    selectedLocation,
+    selectedFeature,
+  ]);
 
   const { width, height } = size;
   const ready = width > 0 && height > 0;
@@ -733,6 +983,25 @@ export default function Map3D({ searchTerm }) {
         hasElevation={height3D}
         isCountyView={viewState.zoom >= ZOOM_THRESHOLD}
       />
+
+      {focusedState && viewState.zoom >= ZOOM_THRESHOLD && (
+        <div className="absolute top-4 left-4 z-10 flex items-center gap-2 rounded-full bg-slate-900/90 px-3 py-1.5 text-xs text-white shadow-lg">
+          <span className="font-semibold">{focusedState.name} counties</span>
+          <button
+            type="button"
+            onClick={exitCountyFocus}
+            className="rounded-full bg-white/15 px-2 py-0.5 font-medium hover:bg-white/25"
+          >
+            All states
+          </button>
+        </div>
+      )}
+
+      {viewState.zoom < ZOOM_THRESHOLD && (
+        <div className="pointer-events-none absolute top-4 left-4 z-10 rounded-full bg-slate-900/80 px-3 py-1.5 text-xs text-white/80 shadow-lg">
+          Click a state to view its counties
+        </div>
+      )}
 
       <div className="absolute bottom-4 left-4 z-10 flex rounded-full bg-slate-900/90 p-1 shadow-lg">
         {["saidi", "saifi"].map((m) => (
