@@ -1,10 +1,12 @@
 // App.jsx
-import { useState } from "react"
-import Data from "./pages/Data.jsx"
+import { lazy, Suspense, useState } from "react"
 import Component from "@/components/dashboard-components.tsx"
 import "./App.css"
 import Map3D from "./pages/Map3D.jsx"
-import Team from "./pages/Team.jsx"
+
+// Loaded on first visit so the home map doesn't wait for the chart library
+const Data = lazy(() => import("./pages/Data.jsx"))
+const Team = lazy(() => import("./pages/Team.jsx"))
 
 
 function BlankPage() {
@@ -43,7 +45,7 @@ function App() {
         }}
       />
       <main className="flex-1 min-h-0">
-        {content}
+        <Suspense fallback={<BlankPage />}>{content}</Suspense>
       </main>
     </div>
   )

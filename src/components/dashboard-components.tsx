@@ -24,8 +24,7 @@ import {
 } from "@/components/ui/popover"
 
 import { SearchCommand } from "@/components/SearchCommand"   // fuzzy command palette
-
-const BASE = import.meta.env.BASE_URL
+import { loadCountiesGeojson } from "@/lib/geo"
 
 export default function Navbar({ currentPage, onNavigate, onSearch }) {
   const [geojson, setGeojson] = React.useState(null)
@@ -40,19 +39,11 @@ export default function Navbar({ currentPage, onNavigate, onSearch }) {
     { id: "team", label: "Team", icon: Users },
   ]
 
-  // 🔥 Load /public/counties.geojson dynamically
+  // Shared with Map3D, so counties.geojson is only downloaded once
   React.useEffect(() => {
-    const loadGeoJSON = async () => {
-      try {
-        const res = await fetch(`${BASE}counties.geojson`)
-        const data = await res.json()
-        setGeojson(data)
-      } catch (err) {
-        console.error("Failed to load GeoJSON:", err)
-      }
-    }
-
-    loadGeoJSON()
+    loadCountiesGeojson()
+      .then(setGeojson)
+      .catch((err) => console.error("Failed to load GeoJSON:", err))
   }, [])
 
   const handleSearch = (result) => {
