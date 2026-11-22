@@ -1,62 +1,62 @@
 State,County,FIPS,SAIDI,SAIFI,Date
-California,Alameda,06001,,0.0,2026-11-20
-California,Alpine,06003,,0.0,2026-11-20
-California,Amador,06005,,0.0,2026-11-20
-California,Butte,06007,,0.0,2026-11-20
-California,Calaveras,06009,,0.0,2026-11-20
-California,Colusa,06011,,0.0,2026-11-20
-California,Contra Costa,06013,,0.0,2026-11-20
-California,Del Norte,06015,,0.0,2026-11-20
-California,El Dorado,06017,,0.0,2026-11-20
-California,Fresno,06019,,0.0,2026-11-20
-California,Glenn,06021,,0.0,2026-11-20
-California,Humboldt,06023,,0.0,2026-11-20
-California,Imperial,06025,,0.0,2026-11-20
-California,Inyo,06027,,0.0,2026-11-20
-California,Kern,06029,,0.0,2026-11-20
-California,Kings,06031,,0.0,2026-11-20
-California,Lake,06033,,0.0,2026-11-20
-California,Lassen,06035,,0.0,2026-11-20
-California,Los Angeles,06037,,0.0,2026-11-20
-California,Madera,06039,,0.0,2026-11-20
-California,Marin,06041,,0.0,2026-11-20
-California,Mariposa,06043,,0.0,2026-11-20
-California,Mendocino,06045,,0.0,2026-11-20
-California,Merced,06047,,0.0,2026-11-20
-California,Modoc,06049,,0.0,2026-11-20
-California,Mono,06051,,0.0,2026-11-20
-California,Monterey,06053,,0.0,2026-11-20
-California,Napa,06055,,0.0,2026-11-20
-California,Nevada,06057,,0.0,2026-11-20
-California,Orange,06059,,0.0,2026-11-20
-California,Placer,06061,,0.0,2026-11-20
-California,Plumas,06063,,0.0,2026-11-20
-California,Riverside,06065,,0.0,2026-11-20
-California,Sacramento,06067,,0.0,2026-11-20
-California,San Benito,06069,,0.0,2026-11-20
-California,San Bernardino,06071,,0.0,2026-11-20
-California,San Diego,06073,,0.0,2026-11-20
-California,San Francisco,06075,,0.0,2026-11-20
-California,San Joaquin,06077,,0.0,2026-11-20
-California,San Luis Obispo,06079,,0.0,2026-11-20
-California,San Mateo,06081,,0.0,2026-11-20
-California,Santa Barbara,06083,,0.0,2026-11-20
-California,Santa Clara,06085,22.979883292383292,28.416154791154792,2026-11-20
-California,Santa Cruz,06087,,0.0,2026-11-20
-California,Shasta,06089,,0.0,2026-11-20
-California,Sierra,06091,,0.0,2026-11-20
-California,Siskiyou,06093,,0.0,2026-11-20
-California,Solano,06095,,0.0,2026-11-20
-California,Sonoma,06097,,0.0,2026-11-20
-California,Stanislaus,06099,,0.0,2026-11-20
-California,Sutter,06101,,0.0,2026-11-20
-California,Tehama,06103,,0.0,2026-11-20
-California,Trinity,06105,,0.0,2026-11-20
-California,Tulare,06107,,0.0,2026-11-20
-California,Tuolumne,06109,,0.0,2026-11-20
-California,Ventura,06111,,0.0,2026-11-20
-California,Yolo,06113,,0.0,2026-11-20
-California,Yuba,06115,,0.0,2026-11-20
+California,Alameda,06001,,0.0,2026-11-21
+California,Alpine,06003,,0.0,2026-11-21
+California,Amador,06005,,0.0,2026-11-21
+California,Butte,06007,,0.0,2026-11-21
+California,Calaveras,06009,,0.0,2026-11-21
+California,Colusa,06011,,0.0,2026-11-21
+California,Contra Costa,06013,,0.0,2026-11-21
+California,Del Norte,06015,,0.0,2026-11-21
+California,El Dorado,06017,,0.0,2026-11-21
+California,Fresno,06019,,0.0,2026-11-21
+California,Glenn,06021,,0.0,2026-11-21
+California,Humboldt,06023,,0.0,2026-11-21
+California,Imperial,06025,,0.0,2026-11-21
+California,Inyo,06027,,0.0,2026-11-21
+California,Kern,06029,,0.0,2026-11-21
+California,Kings,06031,,0.0,2026-11-21
+California,Lake,06033,,0.0,2026-11-21
+California,Lassen,06035,,0.0,2026-11-21
+California,Los Angeles,06037,,0.0,2026-11-21
+California,Madera,06039,,0.0,2026-11-21
+California,Marin,06041,,0.0,2026-11-21
+California,Mariposa,06043,,0.0,2026-11-21
+California,Mendocino,06045,,0.0,2026-11-21
+California,Merced,06047,,0.0,2026-11-21
+California,Modoc,06049,,0.0,2026-11-21
+California,Mono,06051,,0.0,2026-11-21
+California,Monterey,06053,,0.0,2026-11-21
+California,Napa,06055,,0.0,2026-11-21
+California,Nevada,06057,,0.0,2026-11-21
+California,Orange,06059,,0.0,2026-11-21
+California,Placer,06061,,0.0,2026-11-21
+California,Plumas,06063,,0.0,2026-11-21
+California,Riverside,06065,,0.0,2026-11-21
+California,Sacramento,06067,,0.0,2026-11-21
+California,San Benito,06069,,0.0,2026-11-21
+California,San Bernardino,06071,,0.0,2026-11-21
+California,San Diego,06073,,0.0,2026-11-21
+California,San Francisco,06075,,0.0,2026-11-21
+California,San Joaquin,06077,,0.0,2026-11-21
+California,San Luis Obispo,06079,,0.0,2026-11-21
+California,San Mateo,06081,,0.0,2026-11-21
+California,Santa Barbara,06083,,0.0,2026-11-21
+California,Santa Clara,06085,0.04631350681536555,0.05514250309789343,2026-11-21
+California,Santa Cruz,06087,,0.0,2026-11-21
+California,Shasta,06089,,0.0,2026-11-21
+California,Sierra,06091,,0.0,2026-11-21
+California,Siskiyou,06093,,0.0,2026-11-21
+California,Solano,06095,,0.0,2026-11-21
+California,Sonoma,06097,,0.0,2026-11-21
+California,Stanislaus,06099,,0.0,2026-11-21
+California,Sutter,06101,,0.0,2026-11-21
+California,Tehama,06103,,0.0,2026-11-21
+California,Trinity,06105,,0.0,2026-11-21
+California,Tulare,06107,,0.0,2026-11-21
+California,Tuolumne,06109,,0.0,2026-11-21
+California,Ventura,06111,0.0005070993914807302,0.000676132521974307,2026-11-21
+California,Yolo,06113,,0.0,2026-11-21
+California,Yuba,06115,,0.0,2026-11-21
 California,Alameda,6001,,0.0,2026-11-02
 California,Alpine,6003,,0.0,2026-11-02
 California,Amador,6005,,0.0,2026-11-02
@@ -753,61 +753,61 @@ California,Tuolumne,6109,,0.0,2026-11-19
 California,Ventura,6111,,0.0,2026-11-19
 California,Yolo,6113,,0.0,2026-11-19
 California,Yuba,6115,,0.0,2026-11-19
-California,Alameda,6001,,0.0,2026-11-21
-California,Alpine,6003,,0.0,2026-11-21
-California,Amador,6005,,0.0,2026-11-21
-California,Butte,6007,,0.0,2026-11-21
-California,Calaveras,6009,,0.0,2026-11-21
-California,Colusa,6011,,0.0,2026-11-21
-California,Contra Costa,6013,,0.0,2026-11-21
-California,Del Norte,6015,,0.0,2026-11-21
-California,El Dorado,6017,,0.0,2026-11-21
-California,Fresno,6019,,0.0,2026-11-21
-California,Glenn,6021,,0.0,2026-11-21
-California,Humboldt,6023,,0.0,2026-11-21
-California,Imperial,6025,,0.0,2026-11-21
-California,Inyo,6027,,0.0,2026-11-21
-California,Kern,6029,,0.0,2026-11-21
-California,Kings,6031,,0.0,2026-11-21
-California,Lake,6033,,0.0,2026-11-21
-California,Lassen,6035,,0.0,2026-11-21
-California,Los Angeles,6037,,0.0,2026-11-21
-California,Madera,6039,,0.0,2026-11-21
-California,Marin,6041,,0.0,2026-11-21
-California,Mariposa,6043,,0.0,2026-11-21
-California,Mendocino,6045,,0.0,2026-11-21
-California,Merced,6047,,0.0,2026-11-21
-California,Modoc,6049,,0.0,2026-11-21
-California,Mono,6051,,0.0,2026-11-21
-California,Monterey,6053,,0.0,2026-11-21
-California,Napa,6055,,0.0,2026-11-21
-California,Nevada,6057,,0.0,2026-11-21
-California,Orange,6059,,0.0,2026-11-21
-California,Placer,6061,,0.0,2026-11-21
-California,Plumas,6063,,0.0,2026-11-21
-California,Riverside,6065,,0.0,2026-11-21
-California,Sacramento,6067,,0.0,2026-11-21
-California,San Benito,6069,,0.0,2026-11-21
-California,San Bernardino,6071,,0.0,2026-11-21
-California,San Diego,6073,,0.0,2026-11-21
-California,San Francisco,6075,,0.0,2026-11-21
-California,San Joaquin,6077,,0.0,2026-11-21
-California,San Luis Obispo,6079,,0.0,2026-11-21
-California,San Mateo,6081,,0.0,2026-11-21
-California,Santa Barbara,6083,,0.0,2026-11-21
-California,Santa Clara,6085,0.0979020979020979,0.0979020979020979,2026-11-21
-California,Santa Cruz,6087,,0.0,2026-11-21
-California,Shasta,6089,,0.0,2026-11-21
-California,Sierra,6091,,0.0,2026-11-21
-California,Siskiyou,6093,,0.0,2026-11-21
-California,Solano,6095,,0.0,2026-11-21
-California,Sonoma,6097,,0.0,2026-11-21
-California,Stanislaus,6099,,0.0,2026-11-21
-California,Sutter,6101,,0.0,2026-11-21
-California,Tehama,6103,,0.0,2026-11-21
-California,Trinity,6105,,0.0,2026-11-21
-California,Tulare,6107,,0.0,2026-11-21
-California,Tuolumne,6109,,0.0,2026-11-21
-California,Ventura,6111,,0.0,2026-11-21
-California,Yolo,6113,,0.0,2026-11-21
-California,Yuba,6115,,0.0,2026-11-21
+California,Alameda,6001,,0.0,2026-11-20
+California,Alpine,6003,,0.0,2026-11-20
+California,Amador,6005,,0.0,2026-11-20
+California,Butte,6007,,0.0,2026-11-20
+California,Calaveras,6009,,0.0,2026-11-20
+California,Colusa,6011,,0.0,2026-11-20
+California,Contra Costa,6013,,0.0,2026-11-20
+California,Del Norte,6015,,0.0,2026-11-20
+California,El Dorado,6017,,0.0,2026-11-20
+California,Fresno,6019,,0.0,2026-11-20
+California,Glenn,6021,,0.0,2026-11-20
+California,Humboldt,6023,,0.0,2026-11-20
+California,Imperial,6025,,0.0,2026-11-20
+California,Inyo,6027,,0.0,2026-11-20
+California,Kern,6029,,0.0,2026-11-20
+California,Kings,6031,,0.0,2026-11-20
+California,Lake,6033,,0.0,2026-11-20
+California,Lassen,6035,,0.0,2026-11-20
+California,Los Angeles,6037,,0.0,2026-11-20
+California,Madera,6039,,0.0,2026-11-20
+California,Marin,6041,,0.0,2026-11-20
+California,Mariposa,6043,,0.0,2026-11-20
+California,Mendocino,6045,,0.0,2026-11-20
+California,Merced,6047,,0.0,2026-11-20
+California,Modoc,6049,,0.0,2026-11-20
+California,Mono,6051,,0.0,2026-11-20
+California,Monterey,6053,,0.0,2026-11-20
+California,Napa,6055,,0.0,2026-11-20
+California,Nevada,6057,,0.0,2026-11-20
+California,Orange,6059,,0.0,2026-11-20
+California,Placer,6061,,0.0,2026-11-20
+California,Plumas,6063,,0.0,2026-11-20
+California,Riverside,6065,,0.0,2026-11-20
+California,Sacramento,6067,,0.0,2026-11-20
+California,San Benito,6069,,0.0,2026-11-20
+California,San Bernardino,6071,,0.0,2026-11-20
+California,San Diego,6073,,0.0,2026-11-20
+California,San Francisco,6075,,0.0,2026-11-20
+California,San Joaquin,6077,,0.0,2026-11-20
+California,San Luis Obispo,6079,,0.0,2026-11-20
+California,San Mateo,6081,,0.0,2026-11-20
+California,Santa Barbara,6083,,0.0,2026-11-20
+California,Santa Clara,6085,22.97988329238329,28.416154791154792,2026-11-20
+California,Santa Cruz,6087,,0.0,2026-11-20
+California,Shasta,6089,,0.0,2026-11-20
+California,Sierra,6091,,0.0,2026-11-20
+California,Siskiyou,6093,,0.0,2026-11-20
+California,Solano,6095,,0.0,2026-11-20
+California,Sonoma,6097,,0.0,2026-11-20
+California,Stanislaus,6099,,0.0,2026-11-20
+California,Sutter,6101,,0.0,2026-11-20
+California,Tehama,6103,,0.0,2026-11-20
+California,Trinity,6105,,0.0,2026-11-20
+California,Tulare,6107,,0.0,2026-11-20
+California,Tuolumne,6109,,0.0,2026-11-20
+California,Ventura,6111,,0.0,2026-11-20
+California,Yolo,6113,,0.0,2026-11-20
+California,Yuba,6115,,0.0,2026-11-20
